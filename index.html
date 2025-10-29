@@ -70,18 +70,7 @@
             setTimeout(heroTypeWriter, pace);
           }
         }
-        function isInView(el) {
-          const rect = el.getBoundingClientRect();
-          return rect.top < window.innerHeight && rect.bottom >= 0;
-        }
-
-        // Listen for scrolling
-        window.addEventListener("scroll", function () {
-          if (!hasBegan && isInView(heroEl)) {
-            hasBegan = true;
-            heroTypeWriter();
-          }
-        });
+        heroTypeWriter();
       </script>
       <div class="heroButtons">
         <button id="rsvpButton">

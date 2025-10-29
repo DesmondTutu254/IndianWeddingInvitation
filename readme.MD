@@ -7,3 +7,5 @@ A simple, modern site that's an invitation to the weddig of Priya and Arjun.
 Desmond Tutu - 2025
 
 ## Link to the site
+
+[Indian Wedding](https://desmondtutu254.github.io/IndianWeddingInvitation/)
