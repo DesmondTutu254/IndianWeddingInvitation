@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <!-- fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>Priya & Arjun - Wedding Invitation</title>
+
+    <!-- Font Awesome Icons CDN -->
+    <script
+      src="https://kit.fontawesome.com/611e3af2c6.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Particles JS -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  </head>
+  <body>
+    <div id="particles-js"></div>
+
+    <!-- Navigation Bar -->
+    <section class="navigationSection">
+      <div class="names">
+        <p>Priya <i class="fa-solid fa-heart"></i> Arjun</p>
+      </div>
+
+      <div class="menu-icon" id="menuIcon">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+
+      <div class="navigationBarTags" id="navLinks">
+        <a href="#heroSection">Home</a>
+        <a href="#storySection">Our Story</a>
+        <a href="#eventsSection">Events</a>
+        <a href="#ritualsSection">Rituals</a>
+        <a href="#gallerySection">Gallery</a>
+        <a href="#dressCodeSection">Dress code</a>
+        <button id="rsvpAnchor">
+          <i class="fa-regular fa-paper-plane"></i>RSVP
+        </button>
+      </div>
+    </section>
+
+    <!-- Hero section -->
+    <section id="heroSection">
+      <h2>The wedding of</h2>
+      <h1 style="color: var(--accent)">Priya & Arjun</h1>
+      <h2>12th December, 2025</h2>
+      <p id="typeContent"></p>
+
+      <!-- Typewriter for hero section -->
+      <script>
+        const heroText = `With hearts full of joy, we invite you to share in our special day as we
+        begin our new journey together`;
+
+        const heroEl = document.getElementById("typeContent");
+
+        let j = 0;
+        const pace = 25;
+        let hasBegan = false;
+        function heroTypeWriter() {
+          if (j < heroText.length) {
+            heroEl.textContent += heroText.charAt(j);
+            j++;
+            setTimeout(heroTypeWriter, pace);
+          }
+        }
+        function isInView(el) {
+          const rect = el.getBoundingClientRect();
+          return rect.top < window.innerHeight && rect.bottom >= 0;
+        }
+
+        // Listen for scrolling
+        window.addEventListener("scroll", function () {
+          if (!hasBegan && isInView(heroEl)) {
+            hasBegan = true;
+            heroTypeWriter();
+          }
+        });
+      </script>
+      <div class="heroButtons">
+        <button id="rsvpButton">
+          <i class="fa-regular fa-paper-plane"></i>RSVP
+        </button>
+        <button id="liveButton">
+          <i class="fa-solid fa-globe"></i>Join Live
+        </button>
+      </div>
+      <div class="countdown">
+        <div id="daysCount" class="count">30 days</div>
+        <div id="hoursCount" class="count">22 hours</div>
+        <div id="minutesCount" class="count">26 minutes</div>
+        <div id="secondsCount" class="count">44 seconds</div>
+      </div>
+    </section>
+
+    <!-- Our story -->
+    <section id="storySection" class="fade-up">
+      <h1>Our Love Story</h1>
+      <p style="font-size: 1.3rem">
+        From our first meeting to this beautiful moment, every step has been a
+        cherished memory. Join us as we celebrate our story
+      </p>
+      <div class="storyFocus">
+        <p id="typeWriter"></p>
+
+        <!-- Typewriting effect for the story -->
+        <script>
+          const text = `It all started with a glamorous encounter at a bustling festival, a
+          shared love for traditional music, and endless conversations under the
+          starlit sky. Priya, with her radiant smile and compassionate heart,
+          captivated Arjun from the very first moment. Arjun, with his
+          unwavering kindness and adventurous spirit, soon became Priya's
+          confidant and best friend. Over time, our friendship blossomed into a
+          deep profound love. We've navigated challenges, celebrated triumphs
+          and built a fondation rooted in respect, understanding and immense
+          joy. We are incredibly excited to embark on this beautiful journey of
+          marriage and to create a lifetime of new memories.`;
+
+          const element = document.getElementById("typeWriter");
+
+          let i = 0;
+          const speed = 40;
+          let hasStarted = false;
+          function typeWriter() {
+            if (i < text.length) {
+              element.textContent += text.charAt(i);
+              i++;
+              setTimeout(typeWriter, speed);
+            }
+          }
+          function isInView(el) {
+            const rect = el.getBoundingClientRect();
+            return rect.top < window.innerHeight && rect.bottom >= 0;
+          }
+
+          // Listen for scrolling
+          window.addEventListener("scroll", function () {
+            if (!hasStarted && isInView(element)) {
+              hasStarted = true;
+              typeWriter();
+            }
+          });
+        </script>
+        <img src="photos/download.jpg" alt="Priya & Arjun" />
+      </div>
+    </section>
+
+    <!-- Events section -->
+    <section id="eventsSection" class="fade-up">
+      <h1>Our Wedding Events</h1>
+      <p>
+        Join us for a series of joyous celebrations as we begin our forever
+        together.
+      </p>
+
+      <div class="eventsGrid">
+        <div class="event">
+          <h2>Sangeet night</h2>
+          <p class="date">December 10, 2025</p>
+          <p>
+            7:00pm onwards <br />
+            Grand Ballroom, The Royal Palace
+          </p>
+          <p class="details">
+            An evening of vibrant music, lively dances, and heartfelt
+            perfomances. Get ready to celebrate with us.
+          </p>
+        </div>
+        <div class="event">
+          <h2>Wedding Ceremony</h2>
+          <p class="date">December 12, 2025</p>
+          <p>
+            10:00am - 12:00pm <br />
+            The Sacred Gardens, The Royal Palace
+          </p>
+          <p class="details">
+            Witness our sacred vows and blessings in a traditional Indian
+            ceremony.
+          </p>
+        </div>
+        <div class="event">
+          <h2>Reception gala</h2>
+          <p class="date">December 12, 2025</p>
+          <p>
+            7:00pm onwards <br />
+            Emerald Hall, The Royal Palace
+          </p>
+          <p class="details">
+            A grand celebration with fine dining, dancing and toasts to our new
+            future.
+          </p>
+        </div>
+        <div class="event">
+          <h2>Vidai Ceremony</h2>
+          <p class="date">December 13, 2025</p>
+          <p>
+            9:00am <br />
+            The Royal Palace exit.
+          </p>
+          <p class="details">
+            A poignant farewell as the bride departs to start a new jorney with
+            her husband's family.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rituals guide -->
+    <section id="ritualsSection" class="fade-up">
+      <h1 style="color: var(--accent)">Wedding Rituals</h1>
+      <p style="color: #fff">
+        A brief guide to all the captivating traditions and rituals to be
+        perfomed during the wedding
+      </p>
+      <div class="ritualGrid">
+        <div>
+          <h1>Ganesh Puja</h1>
+          <p>
+            The celebrations begin with the sacred Ganesh Puja, invoking the
+            blessings of lord Ganesha, the remover of obstacles and the
+            harbinger of good fortune.
+          </p>
+        </div>
+        <figure>
+          <img src="photos/GaneshPuja.jpg" alt="Ganesha Puja" />
+          <figcaption>Ganesha Puja</figcaption>
+        </figure>
+      </div>
+
+      <div class="ritualGrid">
+        <div>
+          <h1>Mandap & Pheras</h1>
+          <p>
+            Guided by ancient Vedic rituals, the couple circles the fire seven
+            times, each phera representing a sacred vow of love, trust, and
+            lifelong companionship.
+          </p>
+        </div>
+        <figure>
+          <img
+            src="photos/Best Wedding Mandap Ideas for 2022.jpg"
+            alt="Mandap & Pheras"
+          />
+          <figcaption>Mandap & Pheras</figcaption>
+        </figure>
+      </div>
+      <div class="ritualGrid">
+        <div>
+          <h1>Mehndi</h1>
+          <p>
+            The Mehndi ceremony is a celebration of color, laughter, and
+            tradition, where intricate henna designs grace the bride’s hands and
+            feet, symbolizing love, beauty, and joy.
+          </p>
+        </div>
+        <figure>
+          <img src="photos/Mehndi" alt="Mehndi" />
+          <figcaption>Mehndi</figcaption>
+        </figure>
+      </div>
+      <div class="ritualGrid">
+        <div>
+          <h1>Sangeet</h1>
+          <p>
+            The Sangeet night is a vibrant celebration of rhythm, dance, and
+            togetherness, where both families come together in joyful harmony.
+            in words, but in every beat and every smile
+          </p>
+        </div>
+        <figure>
+          <img src="photos/dance.jpg" alt="Sangeet" />
+          <figcaption>Sangeet</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Gallery section -->
+    <section id="gallerySection" class="fade-up">
+      <h1>Gallery</h1>
+      <p>A glimpse into our journey and the joy we've shared so far</p>
+
+      <div class="gallery">
+        <div class="galleryInput">
+          <h2>Add Photos</h2>
+          <input type="file" id="addedPhoto" multiple />
+        </div>
+        <div class="galleryGrid">
+          <div class="gallery-item">
+            <img src="photos/Wedding photography.jpg" alt="wedding" />
+          </div>
+          <div class="gallery-item">
+            <img src="photos/sangeet.jpg" alt="sangeet" />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="photos/Disney fireworks with my love ❤️_🔥.jpg"
+              alt="Fireworks"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="photos/Tandoori Chicken Recipe (Authentic, Easy & Best) - Cubes N Juliennes.jpg"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dress code section -->
+    <section id="dressCodeSection" class="fade-up">
+      <h1>Dress Code Per Event</h1>
+      <p>
+        Perfect layout of color choices and dresses for elegance in every event
+      </p>
+      <div class="dressCodeGrid">
+        <div>
+          <h2>Sangeet Night</h2>
+          <p>
+            Green & Gold <br />
+            Comfortable traditional wear. (lehenga, kurta)
+          </p>
+        </div>
+        <div>
+          <h2>Wedding Ceremony</h2>
+          <p>
+            Festive & Colourful <br />
+            Sequins, silk and joyful tones.
+          </p>
+        </div>
+        <div>
+          <h2>Reception Gala</h2>
+          <p>
+            Evening Formal <br />
+            Dark suits or elegant sarees/dresses.
+          </p>
+        </div>
+        <div>
+          <h2>Vidai Ceremony</h2>
+          <p>
+            Formal Red & Gold <br />
+            Respectful traditional attire preferred.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footerSection">
+      <div class="footerContent">
+        <p class="footerNames">Priya <i class="fa-solid fa-heart"></i> Arjun</p>
+        <p class="footerDate">12th December, 2025</p>
+      </div>
+      <p class="footerCopyright">© 2025 Desmond Tutu. All Rights Reserved</p>
+    </footer>
+
+    <!-- Floating RSVP -->
+    <div id="rsvpModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+
+        <h1>RSVP</h1>
+        <p>Kindly let us know if you can join our celebration</p>
+
+        <form action="https://formspree.io" id="rsvpForm">
+          <div>
+            <label for="firstName">First Name</label>
+            <input
+              type="text"
+              id="firstName"
+              placeholder="First Name"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" placeholder="Last Name" required />
+          </div>
+
+          <div>
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              placeholder="your_email@jckfruit.co.za"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="guestCount">Number of Guests</label>
+            <input
+              type="number"
+              id="guestCount"
+              placeholder="1"
+              required
+              min="0"
+              step="1"
+            />
+          </div>
+
+          <p>What events are you attending?</p>
+          <div class="rsvpEvents">
+            <div>
+              <input type="checkbox" id="sangeetNight" />
+              <label for="sangeetNight">Sangeet Night</label>
+            </div>
+            <div>
+              <input type="checkbox" id="weddingCeremony" />
+              <label for="weddingCeremony">Wedding Ceremony</label>
+            </div>
+            <div>
+              <input type="checkbox" id="vidaiCeremony" />
+              <label for="vidaiCeremony">Vidai Ceremony</label>
+            </div>
+            <div>
+              <input type="checkbox" id="receptionGala" />
+              <label for="vidaiCeremony">Reception Gala</label>
+            </div>
+          </div>
+
+          <button id="submitRSVP">Send RSVP</button>
+        </form>
+      </div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>
