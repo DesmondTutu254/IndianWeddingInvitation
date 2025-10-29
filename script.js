@@ -171,7 +171,7 @@ if (rsvpForm) {
       .map((input) => input.value)
       .join(", ");
 
-    const confirmationMessage = `Thank you, ${firstName}! Your RSVP has been received. You are confirmed for: ${eventsAttending}. We can't wait to celebrate with you! (This is a mock submission.)`;
+    const confirmationMessage = `Thank you, ${firstName}! Your RSVP has been received. You are confirmed for: ${eventsAttending}. We can't wait to celebrate with you!`;
 
     // Sending confirmation message
     const modalContent = document.querySelector(".modal-content");
