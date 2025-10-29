@@ -54,6 +54,11 @@ getEl("liveButton").addEventListener("click", () => {
   window.location.href = "https://meet.google.com";
 });
 
+//locationButton
+getEl("locationButton").addEventListener("click", () => {
+  window.location.href = "https://maps.app.goo.gl/pEdBaFx3KMCYRPFn6";
+});
+
 //Timer
 const weddingDate = new Date("December 12, 2025 10:00:00").getTime();
 
